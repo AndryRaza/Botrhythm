@@ -2,7 +2,7 @@
 
 global $y = 0, $x = 0
 
-HotKeySet("{d}","checkUp")
+HotKeySet("{d}","checkRight")
 HotKeySet("{ESC}","stop")
 
 Func stop()
@@ -13,9 +13,9 @@ EndFunc
 Global $hWnd = WinWait("Stickman Vs. Friday Night Funkin' - Jeux en ligne sur Snokido - Google Chrome")
 
 
-Func checkUp()
+Func checkRight()
 
-	Local $color = 0x12fa05
+	Local $color = 0xf9393f
 	Local $aClientSize = WinGetClientSize($hWnd)
 	Local $aClientPos =  WinGetPos($hWnd)
 
@@ -29,7 +29,7 @@ Func checkUp()
 	
 		;Local $aPixelFound = PixelSearch($aX,$aY,$aX + $aWidth,$aY + $aHeight,$color,0,10,$hWnd)
 		Local $searchGreen = PixelSearch(533,245,821,309,$color,0,1,$hWnd)
-		If Not @error Then Send("{UP}")
+		If Not @error Then Send("{RIGHT}")
 			
 		Sleep(100)
 		
